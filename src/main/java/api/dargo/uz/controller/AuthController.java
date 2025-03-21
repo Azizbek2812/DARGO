@@ -1,5 +1,8 @@
 package api.dargo.uz.controller;
 
+import api.dargo.uz.dto.AppResponse;
+import api.dargo.uz.dto.AuthDTO;
+import api.dargo.uz.dto.ProfileDTO;
 import api.dargo.uz.dto.RegistrationDTO;
 import api.dargo.uz.service.AuthService;
 import jakarta.validation.Valid;
@@ -20,12 +23,17 @@ public class AuthController {
     private  AuthService authService;
 
     @PostMapping("/registration")
-    public ResponseEntity<String> registration(@Valid @RequestBody RegistrationDTO dto){
+    public ResponseEntity<AppResponse<String>> registration(@Valid @RequestBody RegistrationDTO dto){
         return ResponseEntity.ok().body(authService.registration(dto));
     }
 
     @GetMapping("/registration/verification/{token}")
     public ResponseEntity<String> regVerification(@PathVariable("token") String token){
         return ResponseEntity.ok().body(authService.regVerification(token));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<ProfileDTO> registration(@Valid @RequestBody AuthDTO dto){
+        return ResponseEntity.ok().body(authService.login(dto));
     }
 }

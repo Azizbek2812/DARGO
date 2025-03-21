@@ -1,12 +1,22 @@
 ## Registration
-POST localhost:9191/auth/registration
+POST localhost:9090/auth/registration
 Content-Type: application/json
 
 {
-  "name": "Azizbek3",
+  "name": "Anvar",
   "username": "murtozayevazizbek09@gmail.com",
-  "password": "12345"
+  "password": "1234"
 }
+
 
 ###Registration Verification
 GET http://localhost:9090/auth/registration/verification/{profileId}
+
+###Login
+POST localhost:9090/auth/login
+Content-Type: application/json
+
+{
+  "username": "uzbazog5@gmail.com",
+  "password": "12345"
+}

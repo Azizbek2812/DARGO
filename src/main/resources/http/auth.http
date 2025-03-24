@@ -1,9 +1,10 @@
 ## Registration
 POST localhost:9090/auth/registration
 Content-Type: application/json
+Accept-Language:UZ
 
 {
-  "name": "Anvar",
+  "name": "ogabek",
   "username": "murtozayevazizbek09@gmail.com",
   "password": "1234"
 }
@@ -15,8 +16,9 @@ GET http://localhost:9090/auth/registration/verification/{profileId}
 ###Login
 POST localhost:9090/auth/login
 Content-Type: application/json
+Accept-Language:UZ
 
 {
-  "username": "uzbazog5@gmail.com",
+  "username": "murtozayevazizbek09@gmail.com",
   "password": "12345"
 }

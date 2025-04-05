@@ -1,0 +1,37 @@
+
+.page-navigation {
+    padding-top: 40px;
+    padding-bottom: 100px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.page-navigation a {
+    color: #1a2b47; /* Blue color for "Главная страница" */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.page-navigation a:hover {
+    text-decoration: underline;
+}
+
+.page-navigation .arrow {
+    width: 7px;
+    height: 14px;
+    background-image: url("../../images/arrow2.svg");
+    background-repeat: no-repeat;
+    background-size: 7px 14px;
+    background-position: center center;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.page-navigation .news {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17.64px;
+    color: #334155;
+}

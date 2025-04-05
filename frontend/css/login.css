@@ -1,0 +1,93 @@
+.entrance {
+    padding-top: 80px;
+    padding-bottom: 334px;
+}
+
+.entrance_container {
+    text-align: center;
+}
+
+.entrance_title {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 40.8px;
+    color: #18191a;
+    margin-bottom: 24px;
+}
+
+.entrance_text {
+    margin-bottom: 40px;
+}
+
+.entrance_text,
+.entrance_link {
+    font-size: 16px;
+    line-height: 19.2px;
+}
+
+.entrance_link {
+    color: #255cd2;
+}
+
+.entrance_link:hover {
+    text-decoration: underline;
+}
+
+.entrance_block {
+    max-width: 1000px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.entrance_input__block {
+    max-width: 880px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.entrance_input__box {
+    max-width: 410px;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: start;
+}
+
+.entrance_input__box:nth-child(1) {
+    margin-right: 60px;
+}
+
+.entrance_label {
+    margin-bottom: 14px;
+    display: block;
+    font-size: 16px;
+    line-height: 20.16px;
+}
+
+.entrance_input {
+    width: 100%;
+    height: 48px;
+    border-radius: 30px;
+    padding: 14px 24px;
+    outline: none;
+    border: 1px solid #d4dde8;
+}
+
+.entrance_btn {
+    font-size: 16px;
+    line-height: 22.4px;
+    border-radius: 30px;
+    background-color: #255cd2;
+    color: #ffffff;
+    padding: 12px 60px;
+}
+
+.error-text {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+    display: none;
+}

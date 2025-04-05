@@ -1,0 +1,49 @@
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: end;
+}
+
+.form-input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-inline label {
+    margin: 5px 10px 5px 0;
+}
+
+.form-inline input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.form-inline button {
+    padding: 10px 20px;
+    background-color: #1877d1;
+    border: 1px solid #ddd;
+    color: white;
+    cursor: pointer;
+}
+
+.form-inline button:hover {
+    background-color: dodgerblue;
+}
+
+.form-button-margin{
+    margin: 5px 10px 5px 0;
+}
+@media (max-width: 800px) {
+    .form-inline input {
+        margin: 10px 0;
+    }
+
+    .form-inline {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+

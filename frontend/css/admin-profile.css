@@ -1,0 +1,83 @@
+.privacy-text {
+    font-size: 14px;
+}
+
+.privacy-text a {
+    color: #255cd2;
+}
+
+.privacy-text a:hover {
+    text-decoration: underline;
+}
+
+.table {
+    margin-bottom: 40px;
+}
+
+.table, .tr {
+    width: 100%;
+}
+
+.table, .th, .td {
+    border: 0;
+    border-collapse: collapse;
+}
+
+.tr {
+    text-align: center;
+}
+
+.td {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    gap: 5px;
+}
+
+tbody .tr:nth-child(odd) {
+    background-color: #edf0f3;
+}
+
+tbody{
+    font-size: 18px;
+}
+
+thead .tr {
+    background-color: #1877d1;
+    font-size: 18px;
+}
+
+.th {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.table_photo {
+    width: 40px;
+}
+
+.table_basket {
+    width: 24px;
+}
+
+
+.table_btn {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20.16px;
+    color: #ffffff;
+    border-radius: 30px;
+}
+
+.table_btn_block {
+    padding: 4px 20px;
+    background-color: #c8040a;
+}
+
+.table_btn_active {
+    padding: 4px 17.5px;
+    background-color: #0e7c12;
+}
+.table_btn_in_registration {
+    padding: 4px 17.5px;
+    background-color: #ed9510;
+}

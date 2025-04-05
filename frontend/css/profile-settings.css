@@ -1,0 +1,85 @@
+.profile_settings-titles {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28.8px;
+    margin-bottom: 24px;
+}
+
+.profile_settings_photo {
+    border-radius: 30px;
+    max-width: 220px;
+    width: 100%;
+}
+
+.profile-setting-detail-content {
+    max-width: 680px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.profile-setting-info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-settings_label {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 22.4px;
+    color: #334155;
+    margin-bottom: 6px;
+}
+
+.profile-settings_value {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22.4px;
+}
+
+.profile-setting_box {
+    margin-top: 31px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #000000;
+}
+
+.input_label {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 16px;
+    line-height: 20.16px;
+}
+
+.input_label_secondary {
+    color: #334155;
+    display: block;
+    margin-bottom: 14px;
+    font-size: 16px;
+    line-height: 20.16px;
+}
+
+.form_input {
+    outline: none;
+    border: 1px solid #d4dde8;
+    padding: 14px 24px;
+    border-radius: 30px;
+    max-width: 360px;
+    width: 100%;
+}
+/* File upload */
+.file_label {
+    display: inline-block;
+    background-color: indigo;
+    color: white;
+    /*padding: 0.5rem;*/
+    padding: 10px 35px;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.file_label:hover {
+    background-color: #410170;
+}

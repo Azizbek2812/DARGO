@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./css/header.css"/>
+    <link rel="stylesheet" href="./css/main.css"/>
+    <link rel="stylesheet" href="./css/profile-cabinet.css"/>
+    <link rel="stylesheet" href="./css/pagination.css"/>
+    <link rel="stylesheet" href="./css/admin-profile.css"/>
+    <link rel="stylesheet" href="./css/footer.css"/>
+    <title>Admin Profile</title>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- Header start -->
+    <header class="header">
+        <div class="container">
+            <div class="header_container">
+                <div class="header_box__logo">
+                    <a href="index.html">
+                        <img src="./images/logo.png" alt="Book" class="header_logo"/>
+                    </a>
+                </div>
+                <div class="header_block">
+                    <div class="header_box__input">
+                        <input type="text" placeholder="Qidirish" class="header_input" id="header-search-inputId"/>
+                        <button class="header_search" id="header-search-buttonId"></button>
+                    </div>
+                    <div class="dropdown">
+                        <div class="dropdown_toggle" onclick="toggleLanguageDropdown()">
+                            <img src="./images/language.svg" width="24" height="24"/>
+                            <span id="current-lang">UZ</span>
+                            <img src="./images/arrow1.svg" alt="arrow" class="arrow"/>
+                        </div>
+                        <div class="dropdown-content" id="dropdown-content">
+                            <div onclick="setSelectedLanguage('UZ')">UZ</div>
+                            <div onclick="setSelectedLanguage('EN')">EN</div>
+                            <div onclick="setSelectedLanguage('RU')">RU</div>
+                        </div>
+                    </div>
+                    <div class="header_btn__box">
+                        <div class="header_burger__box">
+                            <i class="header_burger"></i>
+                        </div>
+                        <a href="login.html" class="header_btn" id="header_btn">
+                            Log in
+                        </a>
+                        <div class="header_entrance" id="header_entrance">
+                            <button class="header_entrance__toggle">
+                                <img id="header_user_image_id" class="header_user_image" src="./images/default-user.png"
+                                     alt="">
+                                <span id="header_user_name_id">UserName</span>
+                            </button>
+                            <ul class="header_entrance__menu">
+                                <li>
+                                    <a href="profile-post-list.html">
+                                    <span class="icon">
+                                      <svg xmlns="http://www.w3.org/2000/svg"
+                                           width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                        <path d="M14 8s-1 0-1-1-1-4-5-4-5 4-5 4-1 1-1 1v6h12V8z"/>
+                                      </svg>
+                                    </span>
+                                        Kabinetga o'tish
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#logout" onclick="logout()">
+                                    <span class="icon">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                              fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M11.5 2.5a.5.5 0 0 0-.5-.5H4.707l.147-.146a.5.5 0 0 0-.708-.708l-1.5 1.5a.5.5 0 0 0 0 .708l1.5 1.5a.5.5 0 0 0 .708-.708L4.707 3h6.293a.5.5 0 0 0 .5-.5z"/>
+                                            <path d="M11 14V6H5v8h6zm1 0V6a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1z"/>
+                                         </svg>
+                                     </span>
+                                        Profildan chiqish
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header end -->
+
+    <!-- Main start -->
+    <section class="profile_tab container">
+        <h2 class="profile_tab_title">Shaxsiy kabinet</h2>
+
+        <!-- Profile tab-->
+        <div class="profile_tab_link__block">
+            <a href="profile-post-list.html" class="profile_tab_link ">
+                Mening postlarim
+            </a>
+            <a href="profile-settings.html" class="profile_tab_link">
+                Sozlamalar
+            </a>
+            <a href="admin-profile.html" class="profile_tab_link active_link  securityRequired"> Admin
+                profile </a>
+            <a href="admin-post-list.html" class="profile_tab_link  securityRequired">G’iybatlar</a>
+            <div class="profile_tab_line"></div>
+        </div>
+        <!-- Profile end-->
+
+        <!-- Other page content start -->
+        <h3 class="profile_tab_sub_title">
+            Profile List
+        </h3>
+
+        <table class="table">
+            <thead>
+            <tr class="tr">
+                <th class="th">№</th>
+                <th class="th">Photo</th>
+                <th class="th">Name</th>
+                <th class="th">Username</th>
+                <th class="th">Created Date</th>
+                <th class="th">Post Count</th>
+                <th class="th">Roles</th>
+                <th class="th">Status</th>
+                <th class="th">#</th>
+            </tr>
+            </thead>
+            <tbody id="profile_list_container_id">
+            <tr class="tr">
+                <td class="td">1</td>
+                <td class="td">
+                    <img src="./images/photo.png" class="table_photo"/>
+                </td>
+                <td class="td">Alish</td>
+                <td class="td">alish@gmail.com</td>
+                <td class="td">12.12.2012 12:12</td>
+                <td class="td">10</td>
+                <td class="td">ROLE_ADMIN, ROLE_USER</td>
+                <td class="td">
+                    <button class="table_btn table_btn_block">Block</button>
+                </td>
+                <td class="td">
+                    <img src="./images/basket.svg" class="table_basket hover-pointer"/>
+                </td>
+            </tr>
+            <tr class="tr">
+                <td class="td">1</td>
+                <td class="td">
+                    <img src="./images/photo.png" class="table_photo"/>
+                </td>
+                <td class="td">Valish</td>
+                <td class="td">valish@gmail.com</td>
+                <td class="td">12.12.2012 12:12</td>
+                <td class="td">10</td>
+                <td class="td">ROLE_USER</td>
+                <td class="td">
+                    <button class="table_btn table_btn_block">Block</button>
+                </td>
+                <td class="td">
+                    <img src="./images/basket.svg" class="table_basket hover-pointer"/>
+                </td>
+            </tr>
+            <tr class="tr">
+                <td class="td">1</td>
+                <td class="td">
+                    <img src="./images/photo.png" class="table_photo"/>
+                </td>
+                <td class="td">Toshmat</td>
+                <td class="td">Toshma@gmail.com</td>
+                <td class="td">12.12.2012 12:12</td>
+                <td class="td">10</td>
+                <td class="td"> ROLE_USER</td>
+                <td class="td">
+                    <button class="table_btn table_btn_block">Block</button>
+                </td>
+                <td class="td">
+                    <img src="./images/basket.svg" class="table_basket hover-pointer"/>
+                </td>
+            </tr>
+            <tr class="tr">
+                <td class="td">1</td>
+                <td class="td">
+                    <img src="./images/photo.png" class="table_photo"/>
+                </td>
+                <td class="td">Eshmat</td>
+                <td class="td">alish@gmail.com</td>
+                <td class="td">12.12.2012 12:12</td>
+                <td class="td">10</td>
+                <td class="td">ROLE_USER</td>
+                <td class="td">
+                    <button class="table_btn table_btn_block">Block</button>
+                </td>
+                <td class="td">
+                    <img src="./images/basket.svg" class="table_basket hover-pointer"/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <!-- Other page content end -->
+
+        <!-- Pagination start -->
+        <section class="pagination container">
+            <div class="pagination-wrapper" id="paginationWrapperId">
+                <div class="pagination_btn__box">
+                    <button class="pagination_btn pagination-back">Oldingi</button>
+                </div>
+                <div class="pagination_block">
+                    <div class="pagination_btn__box">
+                        <button class="pagination_active">1</button>
+                    </div>
+                    <div class="pagination_btn__box">
+                        <button class="pagination_btn">2</button>
+                    </div>
+                    <div class="pagination_btn__box">
+                        <button class="pagination_btn">3</button>
+                    </div>
+                    <div class="pagination_btn__box">
+                        <button class="pagination_btn">4</button>
+                    </div>
+                    <div class="pagination_btn__box">
+                        <button class="pagination_btn">...</button>
+                    </div>
+                    <div class="pagination_btn__box">
+                        <button class="pagination_btn">10</button>
+                    </div>
+                </div>
+                <div class="pagination_btn__box">
+                    <button class="pagination_btn pagination-forward">Keyingi</button>
+                </div>
+            </div>
+        </section>
+        <!-- Pagination end -->
+    </section>
+    <!-- Main start -->
+
+</div>
+
+<!-- Footer start -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer_container">
+            <div class="footer_logo__box">
+                <a href="index.html">
+                    <img src="./images/logo2.png" alt="Book" class="header_logo"/>
+                </a>
+            </div>
+            <ul class="footer_list">
+                <li class="footer_item">
+                    <a href="" class="footer_link">About project</a>
+                </li>
+                <li class="footer_item">
+                    <a href="" class="footer_link">Telegram</a>
+                </li>
+                <li class="footer_item">
+                    <a href="" class="footer_link">Videohub.uz</a>
+                </li>
+                <li class="footer_item">
+                    <a href="" class="footer_link">Dasturlash.uz</a>
+                </li>
+                <li class="footer_item">© All rights reserved</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<!-- Footer end -->
+
+<!-- Popup Container -->
+<div id="popup-container"></div>
+
+<script src="./js/header.js"></script>
+<script src="./js/admin-profile-list.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/security.js"></script>
+
+</body>
+</html>

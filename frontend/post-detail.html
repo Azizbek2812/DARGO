@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./css/header.css"/>
+    <link rel="stylesheet" href="./css/main.css"/>
+    <link rel="stylesheet" href="./css/post.css"/>
+    <link rel="stylesheet" href="./css/navigation.css"/>
+    <link rel="stylesheet" href="./css/footer.css"/>
+    <title>Document</title>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <!-- Header start -->
+    <header class="header">
+        <div class="container">
+            <div class="header_container">
+                <div class="header_box__logo">
+                    <a href="index.html">
+                        <img src="./images/logo.png" alt="Book" class="header_logo"/>
+                    </a>
+                </div>
+                <div class="header_block">
+                    <div class="header_box__input">
+                        <input type="text" placeholder="Qidirish" class="header_input" id="header-search-inputId"/>
+                        <button class="header_search" id="header-search-buttonId"></button>
+                    </div>
+                    <div class="dropdown">
+                        <div class="dropdown_toggle" onclick="toggleLanguageDropdown()">
+                            <img src="./images/language.svg" width="24" height="24"/>
+                            <span id="current-lang">UZ</span>
+                            <img src="./images/arrow1.svg" alt="arrow" class="arrow"/>
+                        </div>
+                        <div class="dropdown-content" id="dropdown-content">
+                            <div onclick="setSelectedLanguage('UZ')">UZ</div>
+                            <div onclick="setSelectedLanguage('EN')">EN</div>
+                            <div onclick="setSelectedLanguage('RU')">RU</div>
+                        </div>
+                    </div>
+                    <div class="header_btn__box">
+                        <div class="header_burger__box">
+                            <i class="header_burger"></i>
+                        </div>
+                        <a href="login.html" class="header_btn" id="header_btn">
+                            Log in
+                        </a>
+                        <div class="header_entrance" id="header_entrance">
+                            <button class="header_entrance__toggle">
+                                <img id="header_user_image_id" class="header_user_image" src="./images/default-user.png"
+                                     alt="">
+                                <span id="header_user_name_id">UserName</span>
+                            </button>
+                            <ul class="header_entrance__menu">
+                                <li>
+                                    <a href="profile-post-list.html">
+                                    <span class="icon">
+                                      <svg xmlns="http://www.w3.org/2000/svg"
+                                           width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                        <path d="M14 8s-1 0-1-1-1-4-5-4-5 4-5 4-1 1-1 1v6h12V8z"/>
+                                      </svg>
+                                    </span>
+                                        Kabinetga o'tish
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#logout" onclick="logout()">
+                                    <span class="icon">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                              fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M11.5 2.5a.5.5 0 0 0-.5-.5H4.707l.147-.146a.5.5 0 0 0-.708-.708l-1.5 1.5a.5.5 0 0 0 0 .708l1.5 1.5a.5.5 0 0 0 .708-.708L4.707 3h6.293a.5.5 0 0 0 .5-.5z"/>
+                                            <path d="M11 14V6H5v8h6zm1 0V6a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1z"/>
+                                         </svg>
+                                     </span>
+                                        Profildan chiqish
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header end -->
+
+    <!-- Main start -->
+    <main>
+
+        <!-- Navigation start -->
+        <section class="page-navigation container">
+            <a class="news" href="index.html">Asosiy Saxifa</a>
+            <span class="arrow"></span>
+            <span class="news">Yangilik</span>
+        </section>
+        <!-- Navigation end -->
+
+        <!-- PostDetail start -->
+        <section class="post-detail">
+            <p class="post-detail_data" id="postDetailDateId">14.04.2024</p>
+            <h2 class="post-detail_title" id="postDetailTitleId">
+                Kitob o‘qishning ajoyib va kulgili tomonlari
+            </h2>
+            <div class="post-detail_img__box">
+                <img src="./images/deposito.png" id="postDetailImgId" alt="deposito" class="post-detail_deposito"/>
+            </div>
+            <div class="post-detail_content" id="postDetailContentId">
+                <p>1. <b>Kitob o‘qiyotgan odamning ko‘zida hamma narsa
+                    donolikdir.</b> <br>
+                    Ko‘chada bir kitob bilan yurganingizda, odamlar sizni qandaydir ilmiy sirlarni
+                    ochayotgan odam deb o‘ylaydi. Aslida esa, siz boshqalar farishtalar va zombi urushini
+                    o‘qiyotgan bo‘lishingiz mumkin.</p>
+                <br>
+                <p>2. <b>Kitob – shaxsiy teleportatsiya mashinasi.</b> <br>
+                    Siz pulingizni tejab, chet ellarga bormasdan dunyoni aylanishingiz mumkin. Yangi Zelandiya
+                    o‘rmonlariga safar qilishni xohlaysizmi? Yoki Marsga uchishni? Birgina roman yetarli! Biroq,
+                    do‘stlaringiz sizni divanda yotgan holda "ekspeditsiya" qilayotganingizni bilib, xafa
+                    bo‘lishi mumkin.
+                </p>
+                <br>
+                <p> 3. <b>Kitoblar "uyqu dori"ning o‘rnini bosadi.</b> <br>
+                    O‘qishni boshlaganingizdan 10 daqiqa o‘tgach, ko‘zlaringiz ilinishni boshlasa, bu fiziologik
+                    mo‘jiza! Har qanday detektiv yoki fantastik hikoya yaxshi uyquga sabab bo‘lishi mumkin.
+                    Shunday qilib, kitoblar bilan tonggacha kechani bedor o‘tkazish yoki uxlab qolish – tanlov
+                    sizniki!
+                </p>
+                <br>
+                <p>4. <b>Kitoblar – ijtimoiy tarmoqsiz hayotning bir qismi.</b> <br>
+                    Tasavvur qiling, elektr toki yo‘q. Telefoningizda zaryad tugagan. Hayotingiz tamommi? Yo‘q,
+                    agar kitobingiz bo‘lsa! Kitob o‘qiyotganingizda, boshqa dunyolarni "skrollash" qilishingiz
+                    mumkin. Faqat, afsuski, "like" tugmasi yo‘q.
+                </p>
+                <br>
+                <p>5. <b>Kitoblar sog‘liq uchun foydali.</b><br>
+                    Fizik tomondan ham! Yotoqdan olib kelayotgan og‘ir ensiklopediyalar – mushaklarni
+                    rivojlantiradi. Shunchaki Kindle yoki planshet ishlatishni unuting, chunki ular sog‘lom
+                    hayot tarziga mos emas.
+                </p>
+                <br>
+                <p>
+                    6. <b>Kitoblar sizni yangi so‘zlar bilan boyitadi.</b> <br>
+                    Masalan, siz hozir "kvintessensiya" yoki "surunkali melanxoliya" kabi so‘zlarni ishlata
+                    boshlaysiz. Do‘stlaringiz esa hayron qoladi: "Bu odam nimalar deyapti?"
+
+                </p>
+            </div>
+        </section>
+        <!-- PostDetail end -->
+
+        <!-- Post list start -->
+        <section class="post-wrapper container">
+            <h2 class="post_main_title">Oxirgi G'iybatlar</h2>
+
+            <div class="post_container" id="similar-post-container-id">
+                <!-- Post box start -->
+                <div class="post_box">
+                    <a href="post-detail.html">
+                        <div class="post_img__box">
+                            <img src="./images/book1.png" alt="Book1" class="post_img"/>
+                        </div>
+                        <h3 class="post_title">
+                            Videohub.uz da dasturlashni online o’qish
+                        </h3>
+                        <p class="post_text">14.04.2024</p>
+                    </a>
+                </div>
+                <!-- Post box end -->
+
+                <!-- Post box start -->
+                <div class="post_box">
+                    <a href="post-detail.html">
+                        <div class="post_img__box">
+                            <img
+                                    src="./images/book2.png"
+                                    alt="Book1"
+                                    class="post_img"
+                            />
+                        </div>
+                        <h3 class="post_title post_short">Meeting-dagi yangi mishmishlar</h3>
+                        <p class="post_text">14.04.2024</p>
+                    </a>
+                </div>
+                <!-- Post box end -->
+
+                <!-- Post box start -->
+                <div class="post_box">
+                    <a href="post-detail.html">
+                        <div class="post_img__box">
+                            <img
+                                    src="./images/book3.png"
+                                    alt="Book1"
+                                    class="post_img"
+                            />
+                        </div>
+                        <h3 class="post_title">
+                            3 soat-da Java-ni o’rganish
+                        </h3>
+                        <p class="post_text">14.04.2024</p>
+                    </a>
+                </div>
+                <!-- Post box end -->
+            </div>
+        </section>
+        <!-- Post list end -->
+    </main>
+    <!-- Main end -->
+
+</div>
+
+<!-- Footer start -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer_container">
+            <div class="footer_logo__box">
+                <a href="index.html">
+                    <img src="./images/logo2.png" alt="Book" class="header_logo"/>
+                </a>
+            </div>
+            <ul class="footer_list">
+                <li class="footer_item">
+                    <a href="" class="footer_link">About project</a>
+                </li>
+                <li class="footer_item">
+                    <a href="" class="footer_link">Telegram</a>
+                </li>
+                <li class="footer_item">
+                    <a href="" class="footer_link">Videohub.uz</a>
+                </li>
+                <li class="footer_item">
+                    <a href="" class="footer_link">Dasturlash.uz</a>
+                </li>
+                <li class="footer_item">© All rights reserved</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<!-- Footer end -->
+
+<script src="./js/header.js"></script>
+<script src="./js/post-detail.js"></script>
+<script src="./js/main.js"></script>
+
+</body>
+</html>

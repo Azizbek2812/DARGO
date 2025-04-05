@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Popup Messages</title>
+    <style>
+        /* Popup container */
+        #popup-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-end;
+        }
+
+        /* Individual popup styling */
+        .popup {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .popup.hide {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Popup Container -->
+<div id="popup-container"></div>
+
+<script>
+    function showPopup(message) {
+        let container = document.getElementById("popup-container");
+
+        // Create new popup element
+        let popup = document.createElement("div");
+        popup.classList.add("popup");
+        popup.innerText = message;
+
+        // Append popup to container
+        container.appendChild(popup);
+
+        // Remove popup after 3 seconds
+        setTimeout(() => {
+            popup.classList.add("hide"); // Fade out
+            setTimeout(() => popup.remove(), 500); // Remove from DOM
+        }, 3000);
+    }
+
+    // Example: Show multiple messages
+    showPopup("Message 1");
+    setTimeout(() => showPopup("Message 2"), 1000);
+    setTimeout(() => showPopup("Message 3"), 2000);
+</script>
+
+</body>
+</html>

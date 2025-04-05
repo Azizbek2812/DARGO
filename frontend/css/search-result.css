@@ -1,0 +1,52 @@
+.post-search_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.post-search_title {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 42.84px;
+    margin-bottom: 40px;
+    margin-right: 36px;
+}
+
+.post-search_span {
+    font-size: 16px;
+    line-height: 20.48px;
+    margin-bottom: 40px;
+    color: #334155;
+}
+
+.carSearch_box {
+    margin-bottom: 40px;
+}
+
+.post-search_input__box {
+    width: 100%;
+    position: relative;
+}
+
+.post-search_input {
+    width: 100%;
+    padding: 14px 24px;
+    outline: none;
+    border: 1px solid #d4dde8;
+    border-radius: 30px;
+}
+
+.post-search_btn {
+    position: absolute;
+    top: 14px;
+    right: 24px;
+}
+
+.post-search_btn::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: url("../../images/search.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+}

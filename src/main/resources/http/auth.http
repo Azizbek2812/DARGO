@@ -1,11 +1,11 @@
 ## Registration
 POST localhost:9090/auth/registration
 Content-Type: application/json
-Accept-Language:UZ
+Accept-Language:RU
 
 {
-  "name": "ogabek",
-  "username": "murtozayevazizbek09@gmail.com",
+  "name": "ogabek2",
+  "username": "murtozayevazizbek2812@gmail.com",
   "password": "1234"
 }
 

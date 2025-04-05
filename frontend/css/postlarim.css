@@ -1,0 +1,73 @@
+.profile_tab_title {
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 64.4px;
+    margin-bottom: 40px;
+}
+
+.profile_tab_link__block {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-column-gap: 60px;
+    -moz-column-gap: 60px;
+    column-gap: 60px;
+    margin-bottom: 40px;
+}
+
+.profile_tab_link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22.4px;
+    color: #334155;
+    padding-bottom: 8px;
+}
+
+.active_link {
+    color: #255cd2;
+    border-bottom: 3px solid #255cd2;
+    z-index: 111;
+}
+
+.profile_tab_line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #d4dde8;
+    bottom: 1px;
+}
+
+.profile_tab .posts_block {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+}
+
+.profile_tab .posts_block .posts_box {
+    position: relative;
+}
+
+.profile_tab_btn {
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1000;
+    right: 6px;
+    top: 6px;
+}
+
+.profile_tab_btn::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    display: block;
+    background: url("../../images/notes.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+}

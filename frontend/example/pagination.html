@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limited Pagination</title>
+    <style>
+        .pagination {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .pagination a {
+            text-decoration: none;
+            color: #000;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .pagination a.active {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .pagination .dots {
+            padding: 8px 12px;
+            border: none;
+            background: none;
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+<div class="pagination" id="pagination"></div>
+
+<script>
+    const totalPages = 50; // Total number of pages
+    let currentPage = 1; // Current page
+
+    // Function to generate pagination with ellipses
+    function generatePagination(totalPages, currentPage) {
+        const paginationContainer = document.getElementById('pagination');
+        paginationContainer.innerHTML = ''; // Clear existing buttons
+
+        // Add the "Previous" button
+        const prevButton = document.createElement('a');
+        prevButton.textContent = 'Назад';
+        prevButton.href = "#";
+        prevButton.classList.toggle('disabled', currentPage === 1);
+        prevButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (currentPage > 1) {
+                currentPage--;
+                generatePagination(totalPages, currentPage);
+            }
+        });
+        paginationContainer.appendChild(prevButton);
+
+        // Logic for page numbers with ellipses
+        let startPage = Math.max(1, currentPage - 2);
+        let endPage = Math.min(totalPages, currentPage + 2);
+
+        if (startPage > 1) {
+            addPageButton(paginationContainer, 1); // Add the first page
+            if (startPage > 2) {
+                addEllipses(paginationContainer); // Add ellipses if needed
+            }
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+            console.log("for-loop i - "+ i)
+            addPageButton(paginationContainer, i, i === currentPage);
+        }
+
+        if (endPage < totalPages) {
+            console.log("endPage1 ");
+            if (endPage < totalPages - 1) {
+                addEllipses(paginationContainer); // Add ellipses if needed
+            }
+            addPageButton(paginationContainer, totalPages); // Add the last page
+        }
+
+        // Add the "Next" button
+        const nextButton = document.createElement('a');
+        nextButton.textContent = 'Вперед';
+        nextButton.href = "#";
+        nextButton.classList.toggle('disabled', currentPage === totalPages);
+        nextButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (currentPage < totalPages) {
+                currentPage++;
+                generatePagination(totalPages, currentPage);
+            }
+        });
+        paginationContainer.appendChild(nextButton);
+    }
+
+    // Function to add a page button
+    function addPageButton(container, page, isActive = false) {
+        const button = document.createElement('a');
+        button.textContent = page;
+        button.href = "#";
+        if (isActive) {
+            button.classList.add('active');
+        }
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentPage = page;
+            generatePagination(totalPages, currentPage);
+        });
+        container.appendChild(button);
+    }
+
+    // Function to add ellipses
+    function addEllipses(container) {
+        const dots = document.createElement('span');
+        dots.textContent = '...';
+        dots.classList.add('dots');
+        container.appendChild(dots);
+    }
+
+    // Initial render
+    generatePagination(totalPages, currentPage);
+</script>
+</body>
+</html>

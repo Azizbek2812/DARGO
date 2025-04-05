@@ -1,0 +1,75 @@
+.sms-container {
+    max-width: 1000px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    height: 80vh;
+    margin-top: 100px;
+    font-size: 16px;
+    line-height: 22.4px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 40.8px;
+    color: #18191a;
+}
+
+p {
+    font-size: 16px;
+    line-height: 19.2px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.code-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.code-box {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.code-box:focus {
+    outline: none;
+    border: 2px solid #007BFF;
+}
+
+.resend a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 19.2px;
+}
+
+.resend a:hover {
+    text-decoration: underline;
+}
+
+.submit-btn {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}

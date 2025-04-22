@@ -4,6 +4,7 @@ import api.dargo.uz.dto.AppResponse;
 import api.dargo.uz.dto.AuthDTO;
 import api.dargo.uz.dto.ProfileDTO;
 import api.dargo.uz.dto.RegistrationDTO;
+import api.dargo.uz.dto.sms.SmsVerificationDTO;
 import api.dargo.uz.entity.ProfileEntity;
 import api.dargo.uz.enums.AppLanguage;
 import api.dargo.uz.enums.GeneralStatus;
@@ -41,6 +42,9 @@ public class AuthService {
     private ProfileRoleRepository profileRoleRepository;
     @Autowired
     private ResourceBundleService bundleService;
+    @Autowired
+    private SmsSendService smsSendService;
+
 
     @Transactional
     public AppResponse<String> registration(RegistrationDTO dto, AppLanguage lang) {
@@ -68,10 +72,11 @@ public class AuthService {
         profileRoleService.create(entity.getId(), ProfileRole.ROLE_USER);
         emailSendingService.sendRegistrationEmail(dto.getUsername(), entity.getId());
         //send
+        smsSendService.sendRegistrationSms(dto.getUsername());
         return new AppResponse<>(bundleService.getMessage("email.confirm.send", lang));
     }
 
-    public AppResponse<String> regVerification(String token, String lang) {
+    public AppResponse<String> registrationEmailVerification(String token, String lang) {
         try {
             Integer profileId = JwtUtil.decodeRegVerToken(token);
             ProfileEntity profile = profileService.getById(profileId);
@@ -112,5 +117,9 @@ public class AuthService {
         response.setRoleList(profileRoleRepository.getAllRolesListByProfileId(profile.getId()));
         response.setJwt(JwtUtil.encode(profile.getUsername(), profile.getId(), response.getRoleList()));
         return new AppResponse<>(response);
+    }
+
+    public String registrationSmsVerification(SmsVerificationDTO dto, String lang) {
+        return null;
     }
 }

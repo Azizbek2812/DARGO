@@ -87,7 +87,7 @@ public class EmailSendingService {
                 "    <h1>Complete Your Registration</h1>\n" +
                 "    <p>Salom, umid qilamizki, siz yaxshi kayfiyatdasiz!</p>\n" +
                 "    <p>Iltimos, ro'yxatdan o'tishni yakunlash uchun quyidagi tugmani bosing:</p>\n" +
-                "    <a class=\"btn\" href=\"%s/auth/registration/verification/%s\" target=\"_blank\">Verify Email</a>\n" +
+                "    <a class=\"btn\" href=\"%s/auth/registration/email-verification/%s\" target=\"_blank\">Verify Email</a>\n" +
                 "    <p class=\"footer\">Agar siz bu so‘rovni yubormagan bo‘lsangiz, iltimos, ushbu xabarni e'tiborsiz qoldiring.</p>\n" +
                 "</div>\n" +
                 "\n" +

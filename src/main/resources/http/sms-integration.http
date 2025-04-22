@@ -1,0 +1,24 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+###
+POST https://notify.eskiz.uz/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "murtozayevazizbek2812@gmail.com",
+  "password": "e4V9mqFmerBqJTRTHJguJM7Gtq2ny6OW7UOW0Vxx"
+}
+
+###Eskiz sms
+POST https://notify.eskiz.uz/api/message/sms/send
+Content-Type: application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDY2MTgwMzYsImlhdCI6MTc0NDAyNjAzNiwicm9sZSI6InRlc3QiLCJzaWduIjoiNTU2YTljNGMyM2E1NWM4Zjc3NDAxYmJmM2RhYWYwZWZjNjliM2VkZGRiZTFmYTk3ZmE2NzZiZWEzYWJhMzBkMyIsInN1YiI6IjEwNTA5In0.yqa_MhF4cnY6cD4yWRFZrl22KISxT8_-DpsvircF4L8
+
+
+{
+  "mobile_phone": "998930802812",
+  "message": "Bu Eskiz dan test",
+  "from": "4546"
+}

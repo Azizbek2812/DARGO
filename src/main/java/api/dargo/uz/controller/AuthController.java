@@ -4,6 +4,7 @@ import api.dargo.uz.dto.AppResponse;
 import api.dargo.uz.dto.AuthDTO;
 import api.dargo.uz.dto.ProfileDTO;
 import api.dargo.uz.dto.RegistrationDTO;
+import api.dargo.uz.dto.sms.SmsVerificationDTO;
 import api.dargo.uz.enums.AppLanguage;
 import api.dargo.uz.service.AuthService;
 import jakarta.validation.Valid;
@@ -31,15 +32,20 @@ public class AuthController {
                                                             @RequestHeader(value = "Accept-Language" , defaultValue = "UZ") AppLanguage lang) {
         return ResponseEntity.ok().body(authService.registration(dto, lang));
     }
-    @GetMapping("/registration/verification/{token}")
+    @GetMapping("/registration/email-verification/{token}")
     public ResponseEntity<AppResponse<String>> regVerification(@PathVariable("token") String token,
                                                                @RequestHeader(value = "Accept-Language", defaultValue = "UZ") String lang) {
-        return ResponseEntity.ok().body(authService.regVerification(token, lang));
+        return ResponseEntity.ok().body(authService.registrationEmailVerification(token, lang));
     }
 
     @PostMapping("/login")
     public ResponseEntity<AppResponse<ProfileDTO>> registration(@Valid @RequestBody AuthDTO dto,
                                                                 @RequestHeader(value = "Accept-Language" , defaultValue = "UZ") AppLanguage lang) {
         return ResponseEntity.ok().body(authService.login(dto, lang));
+    }
+    @PostMapping("/registration/sms-verification")
+    public ResponseEntity<String> smsVerification(@RequestBody SmsVerificationDTO dto ,
+                                                               @RequestHeader(value = "Accept-Language", defaultValue = "UZ") String lang) {
+        return ResponseEntity.ok().body(authService.registrationSmsVerification(dto, lang));
     }
 }
